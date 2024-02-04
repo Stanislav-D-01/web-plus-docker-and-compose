@@ -34,6 +34,7 @@ export const loginUser = (username, password) => {
         sessionStorage.setItem("auth_token", data.access_token);
         return data;
       } else {
+
         return;
       }
     });
