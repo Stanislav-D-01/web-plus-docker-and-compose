@@ -11,6 +11,6 @@ COPY package*.json ./
 RUN npm ci --no-audit --omit=dev && npm i -g pm2
 COPY --from=builder /app/dist ./dist
 COPY ./ecosystem.config.js ./
-COPY ./.env ./
+#COPY ./.env ./
 CMD ["pm2-runtime", "start", "ecosystem.config.js"]
 
