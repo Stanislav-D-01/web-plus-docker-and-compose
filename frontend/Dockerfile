@@ -5,7 +5,7 @@ RUN npm ci --no-audit
 COPY . ./
 RUN npm run build
 
-FROM nginx:1.23.1-alpine as production
+FROM nginx:latest as production
 WORKDIR /app
 COPY --from=builder /app/build /usr/share/nginx/html
 COPY ./nginx/default.conf /etc/nginx/conf.d
