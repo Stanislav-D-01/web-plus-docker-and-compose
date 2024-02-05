@@ -1,5 +1,5 @@
 
-export const URL = "https://api.kupi-podari.nomoredomainsmonster.ru:80"
+export const URL = "https://api.kupi-podari.nomoredomainsmonster.ru"
 
 export const MINIMUM_PASSWORD_LENGTH = 3;
 export const MINIMUM_USERNAME_LENGTH = 3;
