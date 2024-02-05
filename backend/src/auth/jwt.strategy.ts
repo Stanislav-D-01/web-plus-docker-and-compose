@@ -4,7 +4,7 @@ import { ExtractJwt } from 'passport-jwt';
 import { Strategy } from 'passport-jwt';
 import { ConfigService } from '@nestjs/config';
 import { UsersService } from '../users/users.service';
-import { request } from 'express';
+import * as dotenv from 'dotenv'
 
 @Injectable()
 export class jwtStrategy extends PassportStrategy(Strategy, 'jwt') {
@@ -14,7 +14,7 @@ export class jwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   ) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: 'auth_token',
+      secretOrKey: configService.get<string>('JWT_KEY'),
     });
   }
   async validate(jwtPayload: { sub: number }) {

@@ -8,7 +8,7 @@ services:
     image: backend-docker-dev
     ports:
       - 4000:3001
-    env_file: backend/.env
+    env_file: ./.env
     networks:
       - backend
     depends_on:
@@ -16,7 +16,7 @@ services:
  db:
    container_name: postgres
    image: postgres
-   env_file: backend/.env
+   env_file: ./.env
    restart: always
    networks:
      - backend

@@ -15,6 +15,7 @@ import { getOwnUser } from "../../utils/api";
 import { PrivateRoute } from "../private-route";
 import { SearchBar } from "../search-bar";
 
+
 import { UserContext } from "../../utils/context";
 
 import styles from "./app.module.css";
@@ -23,6 +24,7 @@ function App() {
   const [userCtx, setUserCtx] = useState(null);
 
   useEffect(() => {
+
     if (sessionStorage.getItem("auth_token")) {
       getOwnUser().then((res) => {
         setUserCtx(res);
